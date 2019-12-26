@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pertemuan9</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="administrasi-sistem-dan-pengguna">Administrasi Sistem dan Pengguna</h1>
+<p><img src="https://lh3.googleusercontent.com/iE3QpWNkB4b_f7U-AbXv9ZGJqN1vyoau9O7NXcItTI1hXIN7iJssGcdtFXsC4S-7akcS6YeK-HLpkw" alt="enter image description here"></p>
+<h2 id="first-things-first">First Things First</h2>
+<ol>
+<li>Angkat tangan jika penjelasan terlalu cepat</li>
+<li>Mari membuat suasana praktikkum yang kondusif</li>
+<li>Aktiflah bertanya agar tidak bingung di kemudian hari</li>
+</ol>
+<h3 id="administrasi-sistem">Administrasi Sistem</h3>
+<h5 id="berubah-user-menjadi-root">Berubah User menjadi Root</h5>
+<ol>
+<li>Berubah menjadi user root:  <code>sudo su</code></li>
+<li>Keluar dari user root:  <code>exit</code></li>
+</ol>
+<h5 id="manajemen-proses">Manajemen Proses</h5>
+<ol>
+<li>Menampilkan proses:  <code>ps</code>  atau  <code>ps -A</code>  atau  <code>ps -ef</code></li>
+<li>Menampilkan struktur proses:  <code>pstree</code></li>
+<li>Menampilkan proses  <em>real time</em>:  <code>top</code></li>
+<li>Melihat daftar sinyal:  <code>kill -l</code></li>
+<li>Mengirimkan sinyal kill:  <code>kill -9 no-pid</code></li>
+</ol>
+<h5 id="monitoring-sistem">Monitoring Sistem</h5>
+<ol>
+<li>Menampikan penggunaan file system:  <code>df</code>  atau  <code>df -h</code></li>
+<li>Melihat ukuran direktori:  <code>du</code>  atau  <code>du -h</code></li>
+<li>Melihat ukuran direktori Music:  <code>du -h Music</code></li>
+<li>Melihat penggunaan memori:  <code>free</code>  atau  <code>free -h</code></li>
+</ol>
+<h3 id="administrasi-user-di-terminal">Administrasi User di Terminal</h3>
+<h5 id="membuat-user">Membuat User</h5>
+<ol>
+<li>Membuat user fikri dan membuat home directory:  <code>sudo useradd -m fikri</code></li>
+<li>Cek user fikri di file passwd:  <code>grep fikri /etc/passwd</code></li>
+<li>Melihat direktori home fikri:  <code>ls -l home</code></li>
+</ol>
+<h5 id="menghapus-user">Menghapus User</h5>
+<ol>
+<li>Menghapus user fikri dan home directory:  <code>sudo userdel -r fikri</code></li>
+<li>Cek user fikri di file passwd:  <code>grep lilik /etc/passwd</code></li>
+<li>Cek home direktori fikri:  <code>ls -l home</code></li>
+</ol>
+<h5 id="membuat-grup">Membuat Grup</h5>
+<ol>
+<li>Membuat grup ti1 =  <code>sudo groupadd ti1</code></li>
+<li>Cek group ti1 di file /etc/group:  <code>grep ti1 /etc/group</code></li>
+</ol>
+<h5 id="modifikasi-grup">Modifikasi Grup</h5>
+<ol>
+<li>Mengubah grup ti1 menjadi ti2:  <code>sudo groupmod -n ti2 ti1</code></li>
+<li>Cek group ti1 di file /etc/group:  <code>grep ti1 /etc/group</code></li>
+<li>Cek group ti2 di file /etc/group:  <code>grep ti2 /etc/group</code></li>
+</ol>
+<h5 id="menghapus-grup">Menghapus Grup</h5>
+<ol>
+<li>Menghapus grup ti2:  <code>sudo groupdel ti2</code></li>
+<li>Cek group ti2 di file /etc/group:  <code>grep ti2 /etc/group</code></li>
+</ol>
+<h5 id="membuat-password-user">Membuat Password User</h5>
+<ol>
+<li>Membuat user hilmi:  <code>sudo useradd -m hilmi</code></li>
+<li>Cek password hilmi di /etc/shadow:  <code>sudo grep hilmi /etc/shadow</code></li>
+<li>Membuat password hilmi:  <code>sudo passwd hilmi</code></li>
+<li>Cek password hilmi di /etc/shadow:  <code>sudo grep hilmi /etc/shadow</code></li>
+</ol>
+<h5 id="membuat-password-grup">Membuat Password Grup</h5>
+<ol>
+<li>Membuat grup ti1:  <code>sudo groupadd ti1</code></li>
+<li>Cek password ti1 di /etc/gshadow:  <code>sudo grep ti1 /etc/gshadow</code></li>
+<li>Membuat password grup ti1:  <code>sudo gpasswd ti1</code></li>
+<li>Cek password ti1 di /etc/gshadow:  <code>sudo grep ti1 /etc/gshadow</code></li>
+</ol>
+<h5 id="menambahkan-user-ke-grup">Menambahkan User ke Grup</h5>
+<ol>
+<li>Menambahkan user hilmi ke grup ti2:  <code>sudo gpasswd -a hilmi ti2</code></li>
+<li>Cek user hilmi di grup ti2:  <code>sudo grep ti2 /etc/gshadow</code></li>
+</ol>
+</div>
+</body>
+
+</html>

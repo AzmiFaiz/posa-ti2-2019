@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pertemuan8</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="bantuan--manajemen-software-di-linux">Bantuan &amp; Manajemen Software di Linux</h1>
+<p><img src="https://lh3.googleusercontent.com/HJuYnnqPINJ6RegXdXrhxipHvTWTzq3PLZ86rMwDVovBANZijmvyk87AAidbH7xPRcGZyL3XwTbHsg" alt=""></p>
+<h2 id="first-things-first">First Things First</h2>
+<ol>
+<li>Angkat tangan jika penjelasan terlalu cepat</li>
+<li>Mari membuat suasana praktikkum yang kondusif</li>
+<li>Aktiflah bertanya agar tidak bingung di kemudian hari</li>
+</ol>
+<h2 id="bantuan-di-linux">1. Bantuan di Linux</h2>
+<p>Dalam menggunakan Linux kita sering mengalami kendala terhadap suatu perintah.</p>
+<p>Untuk mendapatkan bantuan di Linux dapat menggunakan perintah:</p>
+<ul>
+<li><code>help</code>.</li>
+<li><code>man</code>.</li>
+<li>option <code>--help</code>.</li>
+<li><code>info</code>.</li>
+</ul>
+<p>Kita juga dapat mendapatkan bantuan dari luar sistem Linux seperti HOWTO, forum diskusi, dan komunitas di Linux.</p>
+<h3 id="help">- Help</h3>
+<h4 id="teori">Teori</h4>
+<p>Help digunakan untuk mendapatkan bantuan dari perintah internal shell.</p>
+<h4 id="praktikum">Praktikum</h4>
+<p>Menampilkan daftar perintah internal shell:</p>
+<ul>
+<li><code>help</code></li>
+</ul>
+<p>Menampilkan informasi lengkap dari perintah pwd:</p>
+<ul>
+<li><code>help pwd</code></li>
+</ul>
+<h3 id="man-manual-page">- Man (Manual page)</h3>
+<h4 id="teori-1">Teori</h4>
+<p>Setiap perintah di Linux menyertakan bantuan yang disebut manual page.</p>
+<p>Sintaks: <code>man [OPTION] [[SECTION] PAGE]</code></p>
+<p>Keterangan:</p>
+<ul>
+<li>
+<p>OPTION:</p>
+<ul>
+<li><code>-k keyword</code> : menampilkan halaman manual sesuai keyword.</li>
+<li><code>-a</code> : menampilkan seluruh halaman info yang sesuai.</li>
+<li><code>-w</code> : menampilkan lokasi direktori dari halaman info.</li>
+</ul>
+</li>
+<li>
+<p>PAGE: nama halaman manual.</p>
+</li>
+</ul>
+<h4 id="praktikum-1">Praktikum</h4>
+<p>Melihat halaman manual dari perintah mkdir:</p>
+<ul>
+<li><code>man mkdir</code></li>
+</ul>
+<p>Menampilkan daftar perintah yang berkaitan dengan password:</p>
+<ul>
+<li><code>man -k password</code></li>
+</ul>
+<h3 id="option---help">- Option --Help</h3>
+<h4 id="teori-2">Teori</h4>
+<p>Selain man, bantuan perintah juga dapat ditampilkan dengan menambahkan option <code>--help</code> pada setiap perintah.</p>
+<p>Tidak semua perintah menyediakan option ini</p>
+<h4 id="praktikum-2">Praktikum</h4>
+<p>Melihat bantuan atau dokumentasi dari perintah ls:</p>
+<ul>
+<li><code>ls --help</code></li>
+</ul>
+<p>Melihat bantuan dari perintah mkdir:</p>
+<ul>
+<li><code>mkdir --help</code></li>
+</ul>
+<h3 id="info">- Info</h3>
+<h4 id="teori-3">Teori</h4>
+<p>Untuk melihat informasi yang lebih lengkap dari suatu perintah disediakan info pages atau halaman informasi.</p>
+<p>Halaman info dibuat untuk program yang dikembangkan oleh proyek GNU.</p>
+<h4 id="praktikum-3">Praktikum</h4>
+<p>Melihat daftar perintah yang memiliki info page:</p>
+<ul>
+<li><code>info</code></li>
+</ul>
+<p>Melihat info pages dari perintah ls:</p>
+<ul>
+<li><code>info ls</code></li>
+</ul>
+<h3 id="howto">- HowTo</h3>
+<h4 id="teori-4">Teori</h4>
+<p>HOWTO adalah salah satu dokumentasi yang digunakan dari luar Linux.</p>
+<p>HOWTO berisi dokumentasi yang berkaitan dengan kasus tertentu.</p>
+<p>Versi HOWTO dapat ditemukan di situs Linux Documentation Project yang beralamat di <a href="https://praktikum-posa.github.io/praktikum-delapan/tldp.org">tldp.org</a>.</p>
+<h4 id="praktikum-4">Praktikum</h4>
+<p>Mencari dokumentasi penggunaan DSL:</p>
+<ul>
+<li>Buka Google.</li>
+<li>Searcing: <code>DSL HOWTO</code></li>
+</ul>
+<h2 id="manajemen-software">2. Manajemen Software</h2>
+<p>Ubuntu menggunakan package manager atau sistem manajemen paket yang disebut <code>apt</code> (Advance Packaging Tool) untuk mengelola software.</p>
+<p>Package manager <code>apt</code> memiliki database software yang disebut repositori.</p>
+<p>Untuk mengakses repositori dapat menggunakan tools Ubuntu Software Center yang berbasis GUI dan <code>apt</code> yang berbasis CLI.</p>
+<p>Selain menggunakan package manager <code>apt</code>, untuk menginstall software secara manual dapat dilakukan dengan perintah <code>dpkg</code>.</p>
+<h3 id="ubuntu-software-center">- Ubuntu Software Center</h3>
+<h4 id="teori-5">Teori</h4>
+<p>Ubuntu Software Center adalah aplikasi GUI untuk mengelola software.</p>
+<p>Ubuntu Software Center bisa diibaratkan seperti Play Store di Android.</p>
+<h4 id="praktikum-5">Praktikum</h4>
+<p><strong>Install Software</strong></p>
+<ul>
+<li>Buka Ubuntu Software Center melalui pencarian.</li>
+<li>Cari aplikasi VLC.</li>
+<li>Klik tombol Install.</li>
+</ul>
+<p><strong>Uninstall Software</strong></p>
+<ul>
+<li>Buka Ubuntu Software Center melalui pencarian.</li>
+<li>Cari aplikasi VLC.</li>
+<li>Klik tombol Remove.</li>
+</ul>
+<h3 id="apt">- APT</h3>
+<h4 id="teori-6">Teori</h4>
+<p>Apt atau Apt-get adalah aplikasi CLI (Command Line Interface) untuk mengelola software.</p>
+<h4 id="praktikum-6">Praktikum</h4>
+<p>Update, Upgrade, dan Dist-Upgrade</p>
+<ul>
+<li><code>sudo apt update</code> : Memperbarui informasi software.</li>
+<li><code>sudo apt upgrade</code>: Menginstall software terbaru.</li>
+<li><code>sudo apt dist-upgrade</code>: Menginstall sistem/kerbaru terbaru.</li>
+</ul>
+<p>Install VLC:</p>
+<ul>
+<li><code>sudo apt install vlc</code></li>
+</ul>
+<p>Download VLC tanpa install:</p>
+<ul>
+<li><code>sudo apt download vlc</code></li>
+</ul>
+<p>Uninstall VLC:</p>
+<ul>
+<li><code>sudo apt remove vlc</code> atau <code>sudo apt purge vlc</code></li>
+</ul>
+<h3 id="dpkg">- DPKG</h3>
+<h4 id="teori-7">Teori</h4>
+<p>DPKG (Debian Package Manager) adalah perintah yang digunakan untuk mengelola software berbasis debian dan file yang memiliki ekstensi <code>.deb</code>.</p>
+<h4 id="praktikum-7">Praktikum</h4>
+<p>Download Teamview (.deb):</p>
+<ul>
+<li><a href="https://www.teamviewer.com/en/download/linux/">Teamviewer</a></li>
+</ul>
+<p>Install Teamviewer:</p>
+<ul>
+<li><code>sudo dpkg -i teamviewer.deb</code></li>
+</ul>
+<p>Uninstall Teamviewer</p>
+<ul>
+<li><code>sudo dpkg -r teamviewer</code></li>
+</ul>
+<h2 id="mengubah-server-repository">Mengubah Server Repository</h2>
+<h4 id="teori-8">Teori</h4>
+<p>Repository merupakan tempat disimpannya semua paket software atau disebut database.</p>
+<p>Daftar repository yang digunakan <code>apt</code> disimpan di file /etc/apt/source.list.</p>
+<p>Untuk mengatur repository dapat dilakukan 2 cara:</p>
+<ul>
+<li>Mengedit secara langsung file /etc/apt/source.list</li>
+<li>menggunakan tools Software &amp; Update yang berbasis GUI.</li>
+</ul>
+<h4 id="praktikum-8">Praktikum</h4>
+<ul>
+<li>Buka <code>Software &amp; Update</code> atau <code>Software</code> di pencarian.</li>
+<li>Klik bagian <code>Download From</code>, lalu pilih <code>Other</code>.</li>
+<li>Pilih Repository yang diinginkan atau pilih Best Server.</li>
+<li>Klik <code>Choose Server</code>.</li>
+</ul>
+</div>
+</body>
+
+</html>

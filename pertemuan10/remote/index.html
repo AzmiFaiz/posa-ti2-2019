@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pertemuan10</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="remote-login-file-transfer-remote-desktop">Remote Login, File Transfer, Remote Desktop</h1>
+<p><img src="https://lh3.googleusercontent.com/1QgWM0CwVv2FUEbeZCZeMhQEDDKGnhy_ZIlrItpvTJnXVT57l6wn6tWWZ6zzjX3UQ74BsYUZHcUy8A" alt="enter image description here"></p>
+<h2 id="first-things-first">First Things First</h2>
+<ol>
+<li>Angkat tangan jika penjelasan terlalu cepat</li>
+<li>Mari membuat suasana praktikkum yang kondusif</li>
+<li>Aktiflah bertanya agar tidak bingung di kemudian hari</li>
+</ol>
+<h4 id="teori">Teori</h4>
+<p>Kita terkadang perlu mengakses komputer server yang berada jauh lokasinya.</p>
+<p>Linux menyediakan fasilitas remote login dan remote desktop untuk melakukan akses ke komputer lain yang lokasinya jauh.</p>
+<p>Untuk melakukan remote login (mengakses kompoter lain) di linux dapat menggunakan SSH (Secure Shell).</p>
+<p><strong>Sintaks</strong>:</p>
+<ul>
+<li><code>ssh user@ip command</code></li>
+</ul>
+<p><strong>Keterangan</strong>:</p>
+<ul>
+<li><code>ssh</code>: melakukan remote login</li>
+<li><code>user</code>: nama user</li>
+<li><code>ip</code>: ip address</li>
+<li><code>command</code>: perintah yang ingin dijalankan setelah login</li>
+</ul>
+<p><strong>Istilah</strong>:</p>
+<ul>
+<li>Komputer local: Komputer sendiri.</li>
+<li>Komputer remote: Komputer orang lain.</li>
+</ul>
+<h4 id="praktikum">Praktikum</h4>
+<p>Cek koneksi dan update Linux:</p>
+<ul>
+<li><code>ping google.com</code></li>
+<li><code>sudo apt update</code></li>
+</ul>
+<p>Install openssh-server:</p>
+<ul>
+<li><code>sudo apt install openssh-server</code></li>
+</ul>
+<p>Buat user guest dengan password guest:</p>
+<ul>
+<li><code>sudo useradd -m guest</code></li>
+<li><code>sudo passwd guest</code></li>
+</ul>
+<p>Cek ip address:</p>
+<ul>
+<li><code>ifconfig</code></li>
+</ul>
+<p>Persiapan SSH:</p>
+<ul>
+<li>Catat user dan ip sendiri.</li>
+<li>Cari teman di sebelahnya.</li>
+<li>Catat user dan ip teman sebelahnya.</li>
+</ul>
+<p>Melakukan Remote Login - SSH:</p>
+<ul>
+<li><code>ssh user@ip</code></li>
+</ul>
+<p><strong>Melakukan Remote Command</strong></p>
+<p>Mengecek user yang sedang login di komputer remote:</p>
+<ul>
+<li><code>ssh user@ip who</code></li>
+</ul>
+<p>Membuat file di komputer remote:</p>
+<ul>
+<li><code>ssh user@ip touch file_remote</code></li>
+</ul>
+<p>Membuat folder di komputer remote</p>
+<ul>
+<li><code>ssh user@ip mkdir folder_remote</code></li>
+</ul>
+<p>Mengecek direktori di komputer remote</p>
+<ul>
+<li><code>ssh user@ip ls -l</code></li>
+</ul>
+<h2 id="file-transfer">File Transfer</h2>
+<h4 id="teori-1">Teori</h4>
+<p>Selain melakukan remote login, kita dapat melakukan file transfer melalui ssh.</p>
+<p>Perintah <code>scp</code> digunakan untuk menyalin file komputer.</p>
+<p>Perintah <code>sftp</code> dapat digunakan untuk file transfer</p>
+<h4 id="praktikum-1">Praktikum</h4>
+<p><strong>SCP</strong>: Menyalin file antar Komputer</p>
+<p>Membuat file dan folder di komputer local:</p>
+<ul>
+<li><code>touch file_local</code></li>
+<li><code>mkdir folder_local</code></li>
+</ul>
+<p>Menyalin file dari komputer local ke komputer remote:</p>
+<ul>
+<li><code>scp file_local user@ip:</code></li>
+</ul>
+<p>Menyalin folder dari komputer local ke komputer remote:</p>
+<ul>
+<li><code>scp -r folder_local user@ip:</code></li>
+</ul>
+<p>Mengecek direktori komputer remote:</p>
+<ul>
+<li><code>ssh user@ip ls -l</code></li>
+</ul>
+<p>Menyalin file dari komputer remote ke komputer local:</p>
+<ul>
+<li><code>scp user@ip:file_remote .</code></li>
+</ul>
+<p>Menyalin folder dari komputer remote ke komputer local:</p>
+<ul>
+<li><code>scp user@ip:folder_remote .</code></li>
+</ul>
+<p>Cek direktori saat ini:</p>
+<ul>
+<li><code>ls -l</code></li>
+</ul>
+<p><strong>SFTP</strong>: File Transfer</p>
+<p>Melakukan koneksi SFTP dengan SSH:</p>
+<ul>
+<li><code>sftp user@ip</code></li>
+</ul>
+<p>Keyword:</p>
+<ul>
+<li>keyword l: mengakses local.</li>
+<li>tanpa keyword l: mengakses remote.</li>
+</ul>
+<p>Melakukan perintah di local:</p>
+<ul>
+<li><code>lpwd</code></li>
+<li><code>lls</code></li>
+<li><code>lcd folder_local</code></li>
+</ul>
+<p>Melakukan operasi di remote:</p>
+<ul>
+<li><code>pwd</code></li>
+<li><code>ls</code></li>
+<li><code>cd folder_remote</code></li>
+</ul>
+<p>Menyalin file dari komputer remote ke komputer local:</p>
+<ul>
+<li><code>ls -l</code></li>
+<li><code>get file_remote</code></li>
+<li><code>lls -l</code></li>
+</ul>
+<p>Menyalin file dari komputer local ke komputer remote:</p>
+<ul>
+<li><code>lls -l</code></li>
+<li><code>put file_local</code></li>
+<li><code>ls -l</code></li>
+</ul>
+<h2 id="remote-desktop">Remote Desktop</h2>
+<p>Menjalankan Desktop Sharing:</p>
+<ul>
+<li>Buka <strong>Desktop Sharing</strong> di Pencarian.</li>
+<li>Centang pada <strong>Allow other users to view your desktop</strong>.</li>
+<li>Centang pada <strong>You must confirm each access to this machine</strong>.</li>
+<li>Centang <strong>Require the user to enter this password</strong> dan masukan password.</li>
+</ul>
+<p>Menjalankan Remina Remote Desktop:</p>
+<ul>
+<li>Buka <strong>Remmina Remote Desktop</strong> di Pencarian</li>
+<li>Klik <strong>New</strong>.</li>
+<li>Pada bagian <strong>Name</strong> masukan nama koneksi.</li>
+<li>Pada bagian <strong>Protocol</strong> pilih: VNC - <strong>Virtual Network Computing</strong>.</li>
+<li>Pada bagian <strong>Server</strong> masukan ip, pada bagian <strong>Username</strong> masukan username, pada bagian <strong>Password</strong> masukan password.</li>
+<li>Klik <strong>Connect</strong>.</li>
+</ul>
+</div>
+</body>
+
+</html>
