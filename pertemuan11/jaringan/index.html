@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertemuan 11 - Jaringan di Linux</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="jaringan-di-linux">Jaringan di Linux</h1>
+<p><img src="https://lh3.googleusercontent.com/KXIYsndlfpURvCJNkHTFk-zrx_e-EfDNXUr27NGm9zvs0e88y_kkkciEs1Eb072q-sIs8bwNIYL-Zg" alt="enter image description here"></p>
+<h2 id="first-things-first">First Things First</h2>
+<ol>
+<li>Angkat tangan jika penjelasan terlalu cepat</li>
+<li>Mari membuat suasana praktikkum yang kondusif</li>
+<li>Aktiflah bertanya agar tidak bingung di kemudian hari</li>
+</ol>
+<h2 id="teori">Teori</h2>
+<ul>
+<li>Konfigurasi Jaringan di Linux Ubuntu : ip address &amp; netmask, ip gateway, dns resolver</li>
+<li>Konfigurasi jaringan menggunakan command line :
+<ul>
+<li><code>ifconfig</code></li>
+<li><code>dbclient</code></li>
+<li><code>route</code></li>
+<li><code>ping</code></li>
+<li><code>nslookup</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="praktikum-dimulai..">Praktikum dimulai…</h2>
+<h3 id="konfigurasi-jaringan-menggunakan-command-line">Konfigurasi jaringan menggunakan command line</h3>
+<ul>
+<li>
+<p>Menampilkan konfigurasi kartu jaringan yang aktif<br>
+<code>$ ifconfig</code></p>
+</li>
+<li>
+<p>Menampilkan konfigurasi kartu jaringan baik yang aktif maupun yang tidak aktif<br>
+<code>$ ifconfig -a</code></p>
+</li>
+<li>
+<p>Menampilkan konfigurasi kartu jaringan tertentu<br>
+<code>$ ifconfig eth0</code><br>
+<code>$ ifconfig lo</code></p>
+</li>
+<li>
+<p>Menonaktifkan kartu jaringan<br>
+<code>$ sudo ifconfig eth0 down</code></p>
+</li>
+<li>
+<p>Mengaktifkan kartu jaringan<br>
+<code>$ sudo ifconfig eth0 up</code></p>
+</li>
+<li>
+<p>Mengubah setting ip address suatu kartu jaringan<br>
+<code>$ sudo ifconfig eth0 192.168.100.1</code><br>
+<code>$ sudo ifconfig eth0 192.168.100.1 netmask 255.255.255.0</code></p>
+</li>
+<li>
+<p>Mendapatkan ip address secara dinamis melalui dhcp server<br>
+<code>$ sudo dhclient -r</code><br>
+<code>$ sudo dhclient eth0</code></p>
+</li>
+<li>
+<p>Menampilkan tabel routing<br>
+<code>$ route</code><br>
+<code>$ route -n</code></p>
+</li>
+<li>
+<p>Menghapus gateway default<br>
+<code>$ sudo route del default</code></p>
+</li>
+<li>
+<p>Menambahkan gateway default<br>
+<code>$ sudo route add default gw 192.168.2.1</code></p>
+</li>
+<li>
+<p>Cek koneksi jaringan<br>
+<code>$ ping 192.168.2.1</code><br>
+<code>$ ping -c5 192.168.2.1</code></p>
+</li>
+<li>
+<p>Query nama domain<br>
+<code>$ nslookup detik.com</code><br>
+<code>$ nslookup detik.com 8.8.8.8</code></p>
+</li>
+</ul>
+<h3 id="konfigurasi-jaringan-di-desktop">Konfigurasi Jaringan di Desktop</h3>
+<ol>
+<li>
+<p>Menampilkan konfigurasi jaringan</p>
+<ul>
+<li>Klik ikon Network yang ada di menu bar kemudian pilih Connection Information</li>
+</ul>
+</li>
+<li>
+<p>Mengubah/menambah konfigurasi jaringan</p>
+<ul>
+<li>Klik ikon Network yang ada di menu bar kemudian pilih Edit Connection…</li>
+<li>Pada window Network Connections, klik tombol Add</li>
+<li>Pada dialog Choose a connection type pilih Ethenet kemudian klik tombol Create…</li>
+<li>Pada kolom Connection name ketik ‘stt­nf’, kemudian klik tab IPv4 Settings</li>
+<li>Pada menu drop down Method, pilih Manual kemudian klik tombol Add</li>
+<li>Ketikkan 192.168.30.x (ganti x dengan nomor urut absen) pada kolom Address</li>
+<li>Ketikkan 255.255.255.0 atau 24 pada kolom Netmask</li>
+<li>Ketikkan 192.168.30.1 pada kolom Gateway</li>
+<li>Ketikkan 192.168.30.1 pada kolom DNS Servers</li>
+<li>Klik tombol Save… untuk mengakhiri konfigurasi.</li>
+</ul>
+</li>
+</ol>
+<h2 id="selesai.">Selesai.</h2>
+<p><strong>Ada Pertanyaan ???</strong></p>
+</div>
+</body>
+
+</html>
